@@ -1,12 +1,16 @@
 package material_test.ivanrudyk.com.materialdesinetest1.activity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import material_test.ivanrudyk.com.materialdesinetest1.R;
 import material_test.ivanrudyk.com.materialdesinetest1.fragment.NavigationDraverFragment;
@@ -15,6 +19,8 @@ import material_test.ivanrudyk.com.materialdesinetest1.fragment.NavigationDraver
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
+    ImageView imOk, imFasebookLogin;
+    TextView etRegister;
 
 
 
@@ -56,14 +62,28 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.navigate_login) {
-            final Dialog d = new Dialog(this);
-            d.setContentView(R.layout.login_layout);
-            d.show();
+            showDialogLogin();
         }
 
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showDialogLogin(){
+        final Dialog d = new Dialog(this);
+        d.setContentView(R.layout.login_layout);
+        imOk = (ImageView) d.findViewById(R.id.iv_ok_login);
+        etRegister = (TextView) d.findViewById(R.id.etRegister);
+        etRegister.setSelectAllOnFocus(true);
+        etRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                d.cancel();
+                startActivity(new Intent(MainActivity.this, RegisterUserActivity.class));
+            }
+        });
+        d.show();
     }
 
 }

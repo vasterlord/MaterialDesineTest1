@@ -9,12 +9,12 @@ import android.view.MenuItem;
 
 import material_test.ivanrudyk.com.materialdesinetest1.R;
 
-public class SubActivity extends AppCompatActivity {
+public class RegisterUserActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sub);
+        setContentView(R.layout.activity_reg_user);
         Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 
