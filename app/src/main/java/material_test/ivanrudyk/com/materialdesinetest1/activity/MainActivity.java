@@ -1,6 +1,6 @@
 package material_test.ivanrudyk.com.materialdesinetest1.activity;
 
-import android.content.Intent;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -55,10 +55,13 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
-        if (id == R.id.navigate) {
-            startActivity(new Intent(this, SubActivity.class));
+        if (id == R.id.navigate_login) {
+            final Dialog d = new Dialog(this);
+            d.setContentView(R.layout.login_layout);
+            d.show();
         }
+
+
 
         return super.onOptionsItemSelected(item);
     }

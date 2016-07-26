@@ -9,9 +9,9 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/navigate"
-        android:title="@string/next"
+        android:id="@+id/navigate_login"
+        android:title="@string/login"
         android:orderInCategory="200"
-        android:icon="@drawable/ic_next"
+        android:icon="@drawable/ic_lock_open_white_24dp"
         app:showAsAction="always"/>
 </menu>
